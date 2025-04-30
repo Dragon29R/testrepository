@@ -1,0 +1,20 @@
+name: python_pipeline
+on:
+  workflow_dispatch:
+jobs:
+  build_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python.py
+        uses: actions/setup-python@v4
+        with:
+          python-: '3.9'
+
+      - name: Install dependencies
+        run: install -r requirements.txt
+
+      - name: Print version
+        run: --version
