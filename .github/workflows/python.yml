@@ -11,10 +11,10 @@ jobs:
       - name: Set up Python.py
         uses: actions/setup-python@v4
         with:
-          python: '3.9'
+          python-version: '3.9'
 
       - name: Install dependencies
-        run: install -r requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Print version
-        run: --version
+        run: python3 --version
